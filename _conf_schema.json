@@ -1,0 +1,34 @@
+{
+  "enabled": {
+    "description": "开关",
+    "type": "bool",
+    "default": true,
+    "hint": "关掉后不再往提示词里拼任何笔记，其它插件与人设不受影响"
+  },
+  "sources": {
+    "description": "笔记来源",
+    "type": "list",
+    "default": [],
+    "hint": "每行一个来源，格式：标签|文件路径|保留条数|字数上限|head或tail。后三项可省略（默认 8 条 / 700 字 / tail）。例：你记着的事|C:\\notes\\memo.md|8|700|tail。tail=取文件末尾最新的几条，head=从头取"
+  },
+  "position": {
+    "description": "注入位置",
+    "type": "string",
+    "default": "system_prompt",
+    "options": ["system_prompt", "user_content"],
+    "labels": ["系统提示词末尾", "本条用户消息附加内容"],
+    "hint": "系统提示词最稳；如果你的模型对长 system prompt 不敏感，改成用户消息附加内容对指令遵循更直接"
+  },
+  "max_total_chars": {
+    "description": "总字数上限",
+    "type": "int",
+    "default": 1600,
+    "hint": "所有来源加起来最多塞多少字，超出就截断后面的来源。每轮都会占这么多 token，别设太大"
+  },
+  "show_when_empty": {
+    "description": "没内容时也提示",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后，所有来源都为空时会注入一句「暂无记录」，方便单独测试插件是否生效"
+  }
+}
