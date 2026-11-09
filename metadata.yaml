@@ -1,0 +1,27 @@
+name: astrbot_plugin_note_inject
+display_name: 外部笔记注入
+short_desc: 把本地便签、备忘、补充人设按轮拼进系统提示词
+desc: >-
+  AstrBot 的人设是一段静态文本，但总有内容需要「每轮都看得见、又不该写死人设」：
+  它自己记下的便签、说好要做的事、一份补充人设页、临时的行为守则、当天任务清单，
+  或者几个角色 / 几台机器共享的一小份事实。<br>
+  本插件在每次请求前读取你指定的文本文件，按配置的顺序、条数和字数上限，
+  把内容拼到系统提示词末尾；文件按修改时间缓存，没变就不重复读盘。<br>
+  支持多来源、标签、从头部或尾部取、总字数预算，以及 /笔记注入 预览当前会注入什么。
+version: 1.0.0
+author: 王子
+license: MIT
+repo: "https://github.com/wzq780/astrbot_plugin_note_inject"
+astrbot_version: ">=4.5.0"
+support_platforms:
+  - aiocqhttp
+  - telegram
+  - discord
+  - qq_official
+tags:
+  - 记忆
+  - 便签
+  - 提示词
+  - 人设
+  - 上下文
+  - 工具
